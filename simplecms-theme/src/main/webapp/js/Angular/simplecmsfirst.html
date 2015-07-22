@@ -1,25 +1,24 @@
-<html>
-<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 <body>
 
 <div ng-app="myApp" ng-controller="myCtrl">
 
-<button ng-click="text=txtA">AddFile!</button>
-<button ng-click="text=txtD">DeleteFile!</button>
-<button ng-click="text=txtU">UpdateFile!</button>
-<button ng-click="text=txtC">CreateFile!</button>
+<button ng-click="text=txtA">AddFile</button>
+<button ng-click="text=txtD">DeleteFile</button>
+<button ng-click="text=txtU">UpdateFile</button>
+<button ng-click="text=txtC">CreateFile</button>
 <p>{{text}}</p>
 
 </div>
 <script>
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
-    $scope.txtA="Added File";
-    $scope.txtD="Deleted File";
-    $scope.txtU="Updated File";
-    $scope.txtC="Created File";
+    $scope.txtA="Added File!";
+    $scope.txtD="Deleted File!";
+    $scope.txtU="Updated File!";
+    $scope.txtC="Created File!";
 });
 </script> 
 
 </body>
 </html>
+
