@@ -1,16 +1,42 @@
 package com.simpleCMS;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
- * Created by Lando on 7/16/2015.
+ * Created by Lando on 7/21/2015.
  */
 public class AddInfo implements AddFilesAndFolders {
 
-    public boolean addFile()
+
+    public boolean addFile(String fileName)
     {
-	return false;
+        try {
+            File file = new File(fileName);
+
+            if (file.createNewFile())
+            {
+                return true;
+            }
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
-    public boolean addFolder()
+    public boolean addFolder(String folderName)
     {
-	return false;
+
+        File folder = new File(folderName);
+
+        if (!folder.exists())
+        {
+            if (folder.mkdir()){
+                return true;
+            }
+        }
+       return false;
     }
 }
