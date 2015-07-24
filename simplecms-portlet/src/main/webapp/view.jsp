@@ -19,3 +19,19 @@
 <portlet:defineObjects />
 
 This is the <b>"Simple"</b> portlet.
+
+<portlet:resourceURL var="dispatcherURL" />
+
+
+<script type="text/javascript">
+var simpleCMS = {};
+simpleCMS.dispatcherURL = '${dispatcherURL}';
+simpleCMS.namespace = '<portlet:namespace />';
+
+</script>
+
+
+
+
+
+
