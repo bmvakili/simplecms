@@ -8,35 +8,30 @@ import java.io.IOException;
  */
 public class AddInfo implements AddFilesAndFolders {
 
+	public boolean addFile(String fileName) {
+		try {
+			File file = new File(fileName);
 
-    public boolean addFile(String fileName)
-    {
-        try {
-            File file = new File(fileName);
+			if (file.createNewFile()) {
+				return true;
+			}
 
-            if (file.createNewFile())
-            {
-                return true;
-            }
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
+		return false;
+	}
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+	public boolean addFolder(String folderName) {
 
-        return false;
-    }
-    public boolean addFolder(String folderName)
-    {
-
-        File folder = new File(folderName);
-
-        if (!folder.exists())
-        {
-            if (folder.mkdir()){
-                return true;
-            }
-        }
-       return false;
-    }
+		File folder = new File(folderName);
+ 
+		if (!folder.exists()) {
+			if (folder.mkdir()) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
