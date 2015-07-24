@@ -18,7 +18,7 @@ public interface AddFilesAndFolders {
 	// parameters: input stream, byte[], java.io.File, ....
 	// 				com.simplecms.model.File parentFolder
 	// 
-	public File addFile(String fileName);
+	public boolean addFile(String fileName);
 
 	public boolean addFolder(String folderName);
 }
